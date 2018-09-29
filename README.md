@@ -1,6 +1,7 @@
 # Project Overview [UdaciFeed:FeedReader] - [:link:](https://adsingh14.github.io/UdaciFeeds/)
 
 You will getting know about a web-based application that reads RSS feeds.
+[Live project](https://adsingh14.github.io/UdaciFeeds/)
 
 
 ## What will you learn?
@@ -19,8 +20,6 @@ You will learn how to use Jasmine to write a number of tests against a pre-exist
 1. Clone this git using `git clone`.
 2. Open `index.html` to check the working of RSS feeds.
 3. For adding more specs/tests into this project, open `feedreader.js`
-
-- [Live project](https://adsingh14.github.io/UdaciFeeds/)
 
 
 ## Tests included in this app

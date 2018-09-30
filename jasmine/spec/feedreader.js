@@ -1,8 +1,8 @@
 /* feedreader.js
- *
- * This is the spec file that Jasmine will read and contains
- * all of the tests that will be run against your application.
- */
+*
+* This is the spec file that Jasmine will read and contains
+* all of the tests that will be run against your application.
+*/
 
 $(function() {
     // Description Test suite name "RSS feeds"
@@ -65,9 +65,9 @@ $(function() {
             });
         });
 
+        // Description Selected feed should contain a single entry
         it('must have at least a single entry', function() {
-            // Description Entry contained feed(s)
-            expect($('.entry .feed')).toBeDefined();
+            expect($(".feed .entry").length).toBeGreaterThan(0);
         });
 
     });
@@ -75,29 +75,23 @@ $(function() {
     // Description Test suite named "New Feed Selection"
 
     describe('New Feed Selection', function() {
-        let oldEntries,
-            newEntries;
+        var oldFeeds,
+            newFeeds;
 
+        // Description Selecting all old feeds to replace with new one
         beforeEach(function(done) {
-            // Description Remove all feeds of selected entry
-            $('.feed').empty();
-
-            // Description Selecting all old feeds
-            loadFeed(1, function() {
-                oldEntries = $('.feed').find(allFeeds.url);
-                done();
-            });
-
-            // Description Selecting all new feeds
             loadFeed(0, function() {
-                newEntries = $('.feed').find(allFeeds.url);
-                done();
+                oldFeeds = $('.feed').html();
+                loadFeed(1 ,done);
             });
+
         });
 
-        // Description Load new feed on first run
-        it('has loaded new feed on first run', function() {
-            expect(newEntries).not.toBe(oldEntries);
+        // Description Load new feeds on first run
+        it('has been loaded with new feeds', function() {
+            // Description 'newFeeds' reserved for new feeds
+            newFeeds = $(".feed").html();
+            expect(newFeeds).not.toEqual(oldFeeds);
         });
 
     });

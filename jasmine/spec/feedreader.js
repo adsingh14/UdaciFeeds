@@ -36,10 +36,11 @@ $(function() {
     // Description: Test suite named "The menu" for menubar/sidebar.
 
     describe('The menu', function() {
+        const body = $('body');
 
-        // Description Checking the menubar visibility
+        // Description Checking the sidebar visibility via body
         it('should hidden by default', function() {
-            expect($('body').hasClass('menu-hidden')).toEqual(true);
+            expect(body.hasClass('menu-hidden')).toEqual(true);
         });
 
         // Description Checking if menu is triggered or not
@@ -47,9 +48,9 @@ $(function() {
             let menuIcon = $('.menu-icon-link');
 
             menuIcon.trigger('click');
-            expect($('body').hasClass('menu-hidden')).toBe(false);
+            expect(body.hasClass('menu-hidden')).toBe(false);
             menuIcon.trigger('click');
-            expect($('body').hasClass('menu-hidden')).toBe(true);
+            expect(body.hasClass('menu-hidden')).toBe(true);
         });
     });
 
